@@ -9,8 +9,8 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="{{ route('articles')}}">Articles</a></li>
-                    <li class="breadcrumb-item active">Edit</li>
+                    <li class="breadcrumb-item"><a href="{{ route('articles')}}">{{ __('Articles') }}</a></li>
+                    <li class="breadcrumb-item active">{{ __('Edit') }}</li>
                     </ol>
                 </div>
             </div>
@@ -23,7 +23,7 @@
                 <section class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">{{ __('Create Article') }}</h3>
+                            <h3 class="card-title">{{ __('Edit Article') }}</h3>
                         </div>
                     </div>
                 </section>

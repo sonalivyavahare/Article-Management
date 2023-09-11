@@ -54,4 +54,11 @@ class ArticleController extends Controller
             $this->articleService->destroy($id);
         }
     }
+
+    public function view($articleId){
+        $data['article'] = $this->articleService->findArticle($articleId);
+        $data['articleTags'] = $this->articleService->getArticleTags($articleId);
+        $data['articleCategories'] = $this->articleService->getArticleCategories($articleId);
+        return view('admin.articles.view', $data);
+    }
 }

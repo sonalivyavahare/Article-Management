@@ -9,8 +9,8 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="{{ route('articles')}}">Articles</a></li>
-                    <li class="breadcrumb-item active">Create</li>
+                    <li class="breadcrumb-item"><a href="{{ route('articles')}}">{{ __('Articles') }}</a></li>
+                    <li class="breadcrumb-item active">{{ __('Create') }}</li>
                     </ol>
                 </div>
             </div>

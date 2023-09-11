@@ -31,6 +31,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth','isAdmin']], function
         Route::get('/edit/{id}', [ArticleController::class, 'edit'])->name('articles.edit');
         Route::put('/update/{id}', [ArticleController::class, 'update'])->name('articles.update');
         Route::delete('/delete/{id}', [ArticleController::class, 'destroy'])->name('articles.destroy');
+        Route::get('/view/{id}', [ArticleController::class, 'view'])->name('articles.view');
     });
 
     Route::group(['prefix' => 'tags'], function(){
