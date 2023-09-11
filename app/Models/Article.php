@@ -14,7 +14,7 @@ class Article extends Model
 
     protected $table = "articles";
 
-    protected $fillable = ['title', 'slug', 'description', 'feature_img'];
+    protected $fillable = ['title', 'slug', 'description', 'feature_img', 'summary', 'author', 'publish_date', 'status'];
 
 
     public function tags(): BelongsToMany

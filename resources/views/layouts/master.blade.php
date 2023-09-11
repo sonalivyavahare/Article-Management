@@ -14,6 +14,9 @@
         <link href="{{ mix('css/adminlte.css') }}" rel="stylesheet">
 
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
+
+        <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+        
         <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js" defer="defer"></script>
         @include('includes.styles')
     </head>
@@ -34,7 +37,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="{{asset('tinymce/js/tinymce/tinymce.min.js')}}" referrerpolicy="origin"></script>
-
+        <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
         @stack('scripts')
         @yield('script')

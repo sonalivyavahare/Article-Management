@@ -23,12 +23,30 @@ class ArticlesDataTable extends DataTable
     {
         return (new EloquentDataTable($query))
             ->setRowId('id') 
-            ->addColumn('feature_image', function ($article) {
+            /*->addColumn('featured_image', function ($article) {
                 return '<img src="'.$article->feature_img.'" width="100" height="auto">';
+            })*/
+            ->editColumn('author', function ($article) {
+                if($article->author != null)
+                    return $article->author;
+                else
+                    return '-';
+            })
+            ->editColumn('publish_date', function ($article) {
+                if($article->publish_date != null)
+                    return \Carbon\Carbon::parse($article->publish_date )->isoFormat('DD/MM/YYYY');
+                else
+                    return '-';
+            })
+            ->editColumn('status', function ($article) {
+                if($article->status == 0)
+                    return "Draft";
+                else
+                    return "Publish";
             })
             ->addColumn('actions', function ($article) {
                 return '<a href="articles/edit/'.$article->id.'" class="btn btn-sm btn-primary">Edit</a>&nbsp<button onclick="deleteRecord('.$article->id.', `articles/delete/'.$article->id.'`, `Are you sure, you want to delete this article?`,`articles-table`)" class="btn btn-sm btn-danger">Delete</button>';
-            })->rawColumns(['feature_image', 'actions']);
+            })->rawColumns(['featured_image', 'actions']);
     }
 
     /**
@@ -61,7 +79,10 @@ class ArticlesDataTable extends DataTable
             Column::make('id'),
             Column::make('title'),
             Column::make('slug'),
-            Column::computed('feature_image'),
+            Column::make('author'),
+            Column::make('publish_date'),
+            Column::make('status'),
+            /*Column::computed('featured_image'),*/
             Column::computed('actions')
                   ->exportable(false)
                   ->printable(false)

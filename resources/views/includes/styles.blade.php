@@ -24,7 +24,7 @@
 	padding-right: 100px;
 }
 
-.card-body img{
+.am-front-page .card-body img{
 	padding-bottom:50px;
 }
 

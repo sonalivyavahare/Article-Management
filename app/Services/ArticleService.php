@@ -42,6 +42,10 @@ class ArticleService {
             'title' => (!empty($request->title)) ? $request->title : '',
             'feature_img' => isset($imgName) ? asset($this->uploadPath.$imgName) : '',
             'description' => (!empty($request->description)) ? $request->description : '',
+            'summary' => (!empty($request->summary)) ? $request->summary : '',
+            'author' => (!empty($request->author)) ? $request->author : '',
+            'publish_date' => (!empty($request->publish_date)) ? $request->publish_date : '',
+            'status' => (!empty($request->status) && $request->status == '1') ? 1 : 0,
         ];
         $articleId = $this->articleRepo->saveArticle($articleDetails);
 
@@ -119,6 +123,11 @@ class ArticleService {
             'title' => (!empty($request->title)) ? $request->title : '',
             'feature_img' => empty($request->file('image')) ? $oldFeaturedImg : asset($this->uploadPath.$imgName) ,
             'description' => (!empty($request->description)) ? $request->description : '',
+            'description' => (!empty($request->description)) ? $request->description : '',
+            'summary' => (!empty($request->summary)) ? $request->summary : '',
+            'author' => (!empty($request->author)) ? $request->author : '',
+            'publish_date' => (!empty($request->publish_date)) ? $request->publish_date : '',
+            'status' => (!empty($request->status) && $request->status == '1') ? 1 : 0,
         ];
 
         $this->articleRepo->updateArticle($articleId, $articleDetails);

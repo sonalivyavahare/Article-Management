@@ -204,7 +204,7 @@
 
     tinymce.init({
         selector: '#description',
-        height: 400,
+        height: 460,
         toolbar: [
             'undo redo | bold italic underline | fontselect fontsizeselect',
             'forecolor backcolor | alignleft aligncenter alignright alignfull | numlist bullist outdent indent | image'
@@ -212,4 +212,14 @@
         plugins: 'image',
         paste_data_images: true
     });
+
+    var loadFile = function(event) {
+        var output = document.getElementById('output');
+        output.src = URL.createObjectURL(event.target.files[0]);
+        output.width = "300";
+        output.height = "100";
+        output.onload = function() {
+          URL.revokeObjectURL(output.src) // free memory
+        }
+    };
 </script>
