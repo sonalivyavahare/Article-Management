@@ -61,7 +61,7 @@
                                             <div class="input-group input-group-merge form-password-toggle"> 
                                                 <input type="password" class="form-control form-control-merge"  name="password" placeholder="Password" id="password" value="" >
                                                 <div class="input-group-append">
-                                                    <span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
+                                                    <span class="input-group-text cursor-pointer"><i  class="fa fa-eye icon"></i></span>
                                                 </div>
                                             </div>
                                             @if($errors->has('password'))
@@ -75,7 +75,7 @@
                                             <div class="input-group input-group-merge form-password-toggle">
                                                 <input type="password" class="form-control form-control-merge"  name="confirm_password" placeholder="Confirm Password" id="confirm_password" value="" >
                                                 <div class="input-group-append">
-                                                    <span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
+                                                    <span class="input-group-text cursor-pointer"><i  class="fa fa-eye icon-conf"></i></span>
                                                 </div>
                                             </div>
                                             @if($errors->has('confirm_password'))
@@ -161,6 +161,19 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
+
+        $('.icon').click(function () {
+            $('#password').attr('type', 'text');
+            setTimeout(function(){ 
+                $('#password').attr('type', 'password');
+            }, 200); 
+        });
+        $('.icon-conf').click(function () {
+            $('#confirm_password').attr('type', 'text');
+            setTimeout(function(){ 
+                $('#confirm_password').attr('type', 'password');
+            }, 200); 
+        });
 
     var $modal = $('#modal');
 
