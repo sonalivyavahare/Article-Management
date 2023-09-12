@@ -1,6 +1,6 @@
 <script type="text/javascript">
 
-    $(document).on("submit", "form", function(event)
+    $(document).on("submit", "#article-form", function(event)
     {
         event.preventDefault();
         $.ajax({

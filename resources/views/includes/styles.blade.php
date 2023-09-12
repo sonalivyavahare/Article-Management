@@ -43,6 +43,51 @@
 	color: green;
 }
 
+.am-profile .custom-file #uploaded_image {
+  width: 100%;
+  height: 100%;
+  border-radius: 150px;
+  object-fit: cover;
+}
+.am-profile .custom-file {
+  width: 250px;
+  height: 250px;
+  border-radius: 250px;
+  overflow: hidden;
+}
+.am-profile .custom-file .overlay {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  height: 0;
+  transition: .5s ease;
+  width: 100%;
+  backdrop-filter: blur(10px);
+}
+.am-profile .custom-file:hover .overlay {
+  height: 50%;
+  cursor: pointer;
+  padding-bottom: 50px;
+}
+.am-profile .custom-file .overlay .text {
+  color: #000;
+  font-size: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-weight: 600;
+} 
+img#sample_image {
+    max-width: 100%;
+}
+
 @media only screen and (min-width: 1200px) {
     table {
         width: 100% !important;

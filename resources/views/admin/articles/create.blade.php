@@ -27,7 +27,7 @@
                     </div>
                 </section>
             </div>
-            <form action="{{ route('articles.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('articles.store') }}" method="POST" enctype="multipart/form-data" id="article-form">
                 @csrf
                 <div class="row">
                     <section class="col-md-8">

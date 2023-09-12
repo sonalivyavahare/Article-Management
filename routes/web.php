@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\AuthController;
 //use App\Http\Controllers\User\ArticleController;
 
 /*
@@ -47,6 +48,11 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth','isAdmin']], function
         Route::put('/update/{id}', [CategoryController::class, 'update'])->name('categories.update');
         Route::delete('/delete/{id}', [CategoryController::class, 'destroy'])->name('categories.destroy');
     });
+
+    Route::get('/profile', [AuthController::class, 'profile'])->name('profile');
+    Route::patch('/profile', [AuthController::class, 'update'])->name('profile.update');
+    Route::post('profile-image-update', [AuthController::class, 'updateImage'])->name('profile.image.update');
+
 });
 
 Route::group(['middleware' => ['auth','isUser']], function(){

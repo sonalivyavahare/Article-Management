@@ -28,7 +28,7 @@
                     </div>
                 </section>
             </div>
-            <form action="{{ route('articles.update',$article->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('articles.update',$article->id) }}" method="POST" enctype="multipart/form-data" id="article-form">
                 @csrf
                 @method('PUT')
                 @php  
@@ -90,8 +90,7 @@
                                     <div>
                                         <label>
                                             @php
-                                                $status = !empty( old('status') ) ? old('status') : '';
-                                                $status = !empty( old('is_add') ) ? $status : '1';
+                                                $status = !empty( old('status') ) ? old('status') : $article->status;
                                             @endphp
 
                                             <input type="checkbox" name="status" id="status" value="1" {{ $status == "1" ? "checked" : "" }} data-toggle="toggle" data-style="ios" value="1">

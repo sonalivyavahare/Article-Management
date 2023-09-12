@@ -45,7 +45,7 @@ class ArticlesDataTable extends DataTable
                     return "Publish";
             })
             ->addColumn('actions', function ($article) {
-                return '<a href="articles/edit/'.$article->id.'" class="text-success"><i class="fas fa-edit"></i></a> <a href="#" class="text-danger" onclick="deleteRecord('.$article->id.', `articles/delete/'.$article->id.'`, `Are you sure, you want to delete this article?`,`articles-table`)" ><i class="fa fa-trash" aria-hidden="true"></i></a> <a href="articles/view/'.$article->id.'" class=""><i class="fa fa-eye" aria-hidden="true"></i></a>' ;
+                return '<a href="articles/edit/'.$article->id.'" class=" btn btn-sm btn-success" title="Edit"><i class="fas fa-edit"></i></a> <a href="#" class="btn btn-sm btn-danger" onclick="deleteRecord('.$article->id.', `articles/delete/'.$article->id.'`, `Are you sure, you want to delete this article?`,`articles-table`)" title="delete" ><i class="fa fa-trash" aria-hidden="true"></i></a> <a href="articles/view/'.$article->id.'" class="btn btn-sm btn-primary" title="View"><i class="fa fa-eye" aria-hidden="true"></i></a>' ;
             })->rawColumns(['featured_image', 'actions']);
     }
 
