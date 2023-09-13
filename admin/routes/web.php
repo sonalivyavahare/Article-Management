@@ -50,7 +50,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth','isAdmin']], function
     });
 
     Route::get('/profile', [AuthController::class, 'profile'])->name('profile');
-    Route::patch('/profile', [AuthController::class, 'update'])->name('profile.update');
+    Route::patch('/profile/update', [AuthController::class, 'update'])->name('profile.update');
     Route::post('profile-image-update', [AuthController::class, 'updateImage'])->name('profile.image.update');
 
 });

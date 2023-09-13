@@ -35,7 +35,7 @@ class AuthController extends Controller
 
         Session::flash('message', 'Profile updated successfully.'); 
 
-        return view('admin.profile');
+        return redirect()->route('profile');
     }
 
     public function updateImage(Request $request)

@@ -62,7 +62,11 @@ class ArticleApiController extends Controller
 
         $articles = $this->query->get();
 
-        return response()->json($articles);
+        $data['success'] = 1;
+        $data['message'] = "Data fetched.";
+        $data['data']    = $articles;
+
+        return $data;
     }
 
     public function getArticleDetailsByID(Request $request) {
@@ -80,10 +84,14 @@ class ArticleApiController extends Controller
         } else {
             
             if(!empty($id)) {
-                $details = $this->query->where('id', $id)->get();
+                $details = $this->query->find($id);
             }
 
-            return response()->json($details);
+            $data['success'] = 1;
+            $data['message'] = "Data fetched.";
+            $data['data']    = $details;
+
+            return $data;
         }
     }
 

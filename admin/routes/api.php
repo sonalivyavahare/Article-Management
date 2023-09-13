@@ -19,7 +19,6 @@ use App\Http\Controllers\Api\AuthController;
 Route::post('login', [AuthController::class, 'login']);
 
 Route::group(['middleware' => 'auth:sanctum'], function() {
-
     Route::post('get-articles', [ArticleApiController::class, 'getArticles']);
     Route::post('get-article-details-by-id', [ArticleApiController::class, 'getArticleDetailsByID']);
 });
