@@ -24,7 +24,7 @@ class CategoriesDataTable extends DataTable
         return (new EloquentDataTable($query))
             ->setRowId('id')
             ->addColumn('actions', function ($category) {
-                return '<button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#categoryEditModal">Edit</button> <button onclick="deleteRecord('.$category->id.', `categories/delete/'.$category->id.'`, `Are you sure, you want to delete this category?`,`categories-table`)" class="btn btn-sm btn-danger">Delete</button>';
+                return '<button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#categoryEditModal"><i class="fas fa-edit"></i></a></button> <button onclick="deleteRecord('.$category->id.', `categories/delete/'.$category->id.'`, `Are you sure, you want to delete this category?`,`categories-table`)" class="btn btn-sm btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>';
             })->rawColumns(['actions']);
     }
 

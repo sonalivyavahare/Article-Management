@@ -24,8 +24,8 @@ class TagsDataTable extends DataTable
         return (new EloquentDataTable($query))
             ->setRowId('id')
             ->addColumn('actions', function ($tag) {
-                return '<button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#tagEditModal">Edit</button>
-                <button onclick="deleteRecord('.$tag->id.', `tags/delete/'.$tag->id.'`, `Are you sure, you want to delete this tag?`, `tags-table`)" class="btn btn-sm btn-danger">Delete</button>';
+                return '<button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#tagEditModal"><i class="fas fa-edit"></i></button>
+                <button onclick="deleteRecord('.$tag->id.', `tags/delete/'.$tag->id.'`, `Are you sure, you want to delete this tag?`, `tags-table`)" class="btn btn-sm btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>';
             })->rawColumns(['actions']);
            /* <a href="tags/edit/'.$tag->id.'" class="btn btn-sm btn-primary">Edit</a>&nbsp */
     }
