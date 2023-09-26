@@ -12,7 +12,7 @@ class FrontRepository {
      * Get All Articles
     */
     public function getArticles() {
-    	$articles = $this->articleModel->orderBy('id', 'desc')->paginate(10);
+    	$articles = $this->articleModel->orderBy('id', 'desc')->paginate(9);
     	return $articles;
     }
 

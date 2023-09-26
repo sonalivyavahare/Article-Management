@@ -57,8 +57,8 @@
                                         <tr>
                                             <td>Featured Image</td>
                                             <td>
-                                                @if(!empty($article->feature_image))
-                                                    <img src="{{ $article->feature_image }}" width="300" height="100" />
+                                                @if(!empty($article->feature_img))
+                                                    <img src="{{ $article->feature_img }}" width="300" height="100" />
                                                 @else
                                                     {{ '-' }}
                                                 @endif

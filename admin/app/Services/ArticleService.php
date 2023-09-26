@@ -2,6 +2,7 @@
 
 namespace App\Services;
 use App\Repositories\ArticleRepository;
+use Image;
 
 class ArticleService {
  
@@ -65,11 +66,16 @@ class ArticleService {
     protected function saveFeaturedImg($image, $oldFeaturedImg) {
     	$extension = $image->getClientOriginalExtension();
         $fileName = 'IMG' . date('YmdHis') . uniqid() . '.' . $extension;
-        $image->move($this->uploadPath, $fileName);
+       /* $image->move($this->uploadPath, $fileName);*/
+
+        $img = Image::make($image->path());
+        $img->resize(480, 320)->save($this->uploadPath.'/'.$fileName);
+
         if(!empty($oldFeaturedImg)) {
              @unlink($this->uploadPath.$oldFeaturedImg);
         }
         return $fileName;
+     
     }
 
     /*

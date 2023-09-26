@@ -88,6 +88,25 @@ img#sample_image {
     max-width: 100%;
 }
 
+.card-img-top {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.am-front-page a{
+    text-decoration: none;
+    color: gray;
+}
+
+.am-front-page a h4 {
+    font-weight: 700;
+    color: #000;
+}
+.am-front-page a:hover h4{
+    color: #00758C;
+    
+}
+
 @media only screen and (min-width: 1200px) {
     table {
         width: 100% !important;

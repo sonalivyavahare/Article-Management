@@ -23,8 +23,7 @@ class ArticleController extends Controller
     /*
      * Get Articles details  by using slug and passed it to the article details view
     */
-    public function getArticleDetails($slug)
-    {
+    public function getArticleDetails($slug) {
         $data['article'] = $this->frontService->getArticleDetails($slug);
         return view('user.articles.details', $data);
     }
